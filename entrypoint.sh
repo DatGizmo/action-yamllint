@@ -31,6 +31,7 @@ fi
 # Enable globstar so ** globs recursively
 shopt -s globstar
 
+yamllint --list-files "${options[@]}" ${INPUT_FILE_OR_DIR:-.} | tee -a "$LOGFILE"
 yamllint "${options[@]}" ${INPUT_FILE_OR_DIR:-.} | tee -a "$LOGFILE"
 exitcode=$?
 
